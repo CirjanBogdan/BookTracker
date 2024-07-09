@@ -1,15 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using BookTrackerAPI.Data;
-using BookTrackerAPI.Models;
-using BookTrackerAPI.Services.Implementations;
-using BookTrackerAPI.Services.Contracts;
+﻿using BookTrackerAPI.Models;
 using BookTrackerAPI.Models.ViewModels;
+using BookTrackerAPI.Services.Contracts;
+using Microsoft.AspNetCore.Mvc;
 
 namespace BookTrackerAPI.Controllers
 {
@@ -25,23 +17,23 @@ namespace BookTrackerAPI.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAllBooks()
+        public async Task<IActionResult> GetAll()
         {
-            var allBooks = await _booksService.GetAllBooks();
+            var allBooks = await _booksService.GetAll();
             return Ok(allBooks);
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddBook(Book book)
+        public async Task<IActionResult> Add(BookDTO book)
         {
-            await _booksService.AddBook(book);
+            await _booksService.AddBookWithAuthor(book);
             return Ok(book);
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetBookById(int id)
+        public async Task<IActionResult> GetBook(int id)
         {
-            var book = await _booksService.GetBookById(id);
+            var book = await _booksService.GetById(id);
             
             if (book == null)
             {
@@ -51,11 +43,10 @@ namespace BookTrackerAPI.Controllers
             return Ok(book);
         }
 
-        [HttpPut]
-        [Route("{id}")]
-        public async Task<IActionResult> Update([FromRoute] int id, BookDTO bookDto)
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Update(int id, BookDTO bookDto)
         {
-            var bookModel = await _booksService.UpdateBook(id, bookDto);
+            var bookModel = await _booksService.Update(id, bookDto);
 
             if (bookModel == null)
             {
@@ -65,11 +56,10 @@ namespace BookTrackerAPI.Controllers
             return Ok(bookModel);
         }
 
-        [HttpDelete]
-        [Route("{id}")]
-        public async Task<IActionResult> Delete([FromRoute] int id)
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
         {
-            var bookModel = await _booksService.DeleteBook(id);
+            var bookModel = await _booksService.Delete(id);
 
             if (bookModel == null)
             {

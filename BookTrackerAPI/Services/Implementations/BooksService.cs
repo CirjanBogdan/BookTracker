@@ -1,4 +1,5 @@
-﻿using BookTrackerAPI.Data;
+﻿using AutoMapper;
+using BookTrackerAPI.Data;
 using BookTrackerAPI.Models;
 using BookTrackerAPI.Models.ViewModels;
 using BookTrackerAPI.Services.Contracts;
@@ -8,37 +9,65 @@ namespace BookTrackerAPI.Services.Implementations
 {
     public class BooksService : IBooksService
     {
-        public ApplicationDbContext _context;
+        private readonly ApplicationDbContext _context;
+        private readonly IMapper _mapper;
 
-        public BooksService(ApplicationDbContext context)
+        public BooksService(ApplicationDbContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
 
-        public async Task<Book> AddBook(Book bookModel)
+        public async Task<BookDTO> AddBookWithAuthor(BookDTO bookModel)
         {
-            var book = new Book
-            {
-                Title = bookModel.Title,
-                Description = bookModel.Description,
-                Author = bookModel.Author,
-            };
+            var book = _mapper.Map<Book>(bookModel);
             await _context.Books.AddAsync(book);
             await _context.SaveChangesAsync();
-            return bookModel;
+
+            foreach (var id in bookModel.AuthorIds)
+            {
+                var book_author = new Book_Author
+                {
+                    BookId = book.Id,
+                    AuthorId = id,
+                };
+                await _context.Book_Authors.AddAsync(book_author);
+                await _context.SaveChangesAsync();
+            }
+
+            return _mapper.Map<BookDTO>(book);
         }
 
-        public async Task<List<Book>> GetAllBooks()
+        public async Task<List<BookWithAuthorsDTO>> GetAll()
         {
-            return await _context.Books.ToListAsync();
+
+            var books = await _context.Books.ToListAsync();
+            var booksWithAuthors = _mapper.Map<List<BookWithAuthorsDTO>>(books);
+
+            foreach (var book in booksWithAuthors)
+            {
+                book.AuthorNames = await _context.Book_Authors.Where(i => i.BookId == book.Id).Select(n => n.Author.FullName).ToListAsync();
+            }
+
+            return booksWithAuthors;
         }
 
-        public async Task<Book?> GetBookById(int id)
+        public async Task<BookWithAuthorsDTO?> GetById(int id)
         {
-            return await _context.Books.FindAsync(id);
+            var book = await _context.Books.FindAsync(id);
+
+            if (book == null)
+            {
+                return null;
+            }
+            var bookWithAuthors = _mapper.Map<BookWithAuthorsDTO>(book);
+
+            bookWithAuthors.AuthorNames = await _context.Book_Authors.Where(i => i.BookId == id).Select(n => n.Author.FullName).ToListAsync();
+
+            return bookWithAuthors;
         }
 
-        public async Task<Book?> UpdateBook(int id, BookDTO bookDto)
+        public async Task<BookDTO?> Update(int id, BookDTO bookDto)
         {
             var existingBook = await _context.Books.FirstOrDefaultAsync(x => x.Id == id);
 
@@ -47,27 +76,27 @@ namespace BookTrackerAPI.Services.Implementations
                 return null;
             }
 
-            existingBook.Title = bookDto.Title;
-            existingBook.Description = bookDto.Description;
-            existingBook.Author = bookDto.Author;
-
+            existingBook = _mapper.Map<Book>(bookDto);
             await _context.SaveChangesAsync();
 
-            return existingBook;
+            return bookDto;
         }
 
-        public async Task<Book?> DeleteBook(int id)
+        public async Task<BookDTO?> Delete(int id)
         {
-            var bookModel = await _context.Books.FirstOrDefaultAsync(x =>x.Id == id);   
+            var book = await _context.Books.FirstOrDefaultAsync(x =>x.Id == id);   
 
-            if (bookModel == null)
+            if (book == null)
             {
                 return null;
             }
 
-            _context.Books.Remove(bookModel);
+            var deletedBookModel = _mapper.Map<BookDTO>(book);
+
+            _context.Books.Remove(book);
             await _context.SaveChangesAsync();
-            return bookModel;
+
+            return deletedBookModel;
         }
     }
 }

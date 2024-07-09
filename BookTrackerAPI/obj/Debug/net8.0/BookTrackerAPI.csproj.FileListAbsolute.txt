@@ -250,3 +250,5 @@ C:\Users\KBO\source\repos\BookTrackerAPI\BookTrackerAPI\bin\Debug\net8.0\runtime
 C:\Users\KBO\source\repos\BookTrackerAPI\BookTrackerAPI\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Drawing.Common.dll
 C:\Users\KBO\source\repos\BookTrackerAPI\BookTrackerAPI\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\KBO\source\repos\BookTrackerAPI\BookTrackerAPI\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Windows.Extensions.dll
+C:\Users\KBO\source\repos\BookTrackerAPI\BookTrackerAPI\obj\Debug\net8.0\BookTrackerAPI.sourcelink.json
+C:\Users\KBO\source\repos\BookTrackerAPI\BookTrackerAPI\bin\Debug\net8.0\AutoMapper.dll

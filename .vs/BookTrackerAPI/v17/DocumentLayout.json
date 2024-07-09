@@ -3,20 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\KBO\\source\\repos\\BookTrackerAPI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EF52BDCD-B981-4A33-9453-71CE68B3333C}|BookTrackerAPI\\BookTrackerAPI.csproj|c:\\users\\kbo\\source\\repos\\booktrackerapi\\booktrackerapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EF52BDCD-B981-4A33-9453-71CE68B3333C}|BookTrackerAPI\\BookTrackerAPI.csproj|solutionrelative:booktrackerapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{EF52BDCD-B981-4A33-9453-71CE68B3333C}|BookTrackerAPI\\BookTrackerAPI.csproj|c:\\users\\kbo\\source\\repos\\booktrackerapi\\booktrackerapi\\controllers\\bookscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EF52BDCD-B981-4A33-9453-71CE68B3333C}|BookTrackerAPI\\BookTrackerAPI.csproj|solutionrelative:booktrackerapi\\controllers\\bookscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EF52BDCD-B981-4A33-9453-71CE68B3333C}|BookTrackerAPI\\BookTrackerAPI.csproj|c:\\users\\kbo\\source\\repos\\booktrackerapi\\booktrackerapi\\services\\implementations\\booksservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EF52BDCD-B981-4A33-9453-71CE68B3333C}|BookTrackerAPI\\BookTrackerAPI.csproj|solutionrelative:booktrackerapi\\services\\implementations\\booksservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EF52BDCD-B981-4A33-9453-71CE68B3333C}|BookTrackerAPI\\BookTrackerAPI.csproj|c:\\users\\kbo\\source\\repos\\booktrackerapi\\booktrackerapi\\services\\contracts\\ibooksservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EF52BDCD-B981-4A33-9453-71CE68B3333C}|BookTrackerAPI\\BookTrackerAPI.csproj|solutionrelative:booktrackerapi\\services\\contracts\\ibooksservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -35,53 +23,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\KBO\\source\\repos\\BookTrackerAPI\\BookTrackerAPI\\Program.cs",
-              "RelativeDocumentMoniker": "BookTrackerAPI\\Program.cs",
-              "ToolTip": "C:\\Users\\KBO\\source\\repos\\BookTrackerAPI\\BookTrackerAPI\\Program.cs",
-              "RelativeToolTip": "BookTrackerAPI\\Program.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAtwBkAAAAtAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-05T10:07:24.236Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "BooksController.cs",
               "DocumentMoniker": "C:\\Users\\KBO\\source\\repos\\BookTrackerAPI\\BookTrackerAPI\\Controllers\\BooksController.cs",
               "RelativeDocumentMoniker": "BookTrackerAPI\\Controllers\\BooksController.cs",
               "ToolTip": "C:\\Users\\KBO\\source\\repos\\BookTrackerAPI\\BookTrackerAPI\\Controllers\\BooksController.cs",
               "RelativeToolTip": "BookTrackerAPI\\Controllers\\BooksController.cs",
-              "ViewState": "AQIAADkAAAAAAAAAAAAUwE4AAAAfAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-01T09:03:40.054Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "IBooksService.cs",
-              "DocumentMoniker": "C:\\Users\\KBO\\source\\repos\\BookTrackerAPI\\BookTrackerAPI\\Services\\Contracts\\IBooksService.cs",
-              "RelativeDocumentMoniker": "BookTrackerAPI\\Services\\Contracts\\IBooksService.cs",
-              "ToolTip": "C:\\Users\\KBO\\source\\repos\\BookTrackerAPI\\BookTrackerAPI\\Services\\Contracts\\IBooksService.cs",
-              "RelativeToolTip": "BookTrackerAPI\\Services\\Contracts\\IBooksService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAA6AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-05T10:00:42.307Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "BooksService.cs",
-              "DocumentMoniker": "C:\\Users\\KBO\\source\\repos\\BookTrackerAPI\\BookTrackerAPI\\Services\\Implementations\\BooksService.cs",
-              "RelativeDocumentMoniker": "BookTrackerAPI\\Services\\Implementations\\BooksService.cs",
-              "ToolTip": "C:\\Users\\KBO\\source\\repos\\BookTrackerAPI\\BookTrackerAPI\\Services\\Implementations\\BooksService.cs",
-              "RelativeToolTip": "BookTrackerAPI\\Services\\Implementations\\BooksService.cs",
-              "ViewState": "AQIAADMAAAAAAAAAAAAowEUAAAAdAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-05T08:18:28.302Z",
+              "WhenOpened": "2024-07-09T09:54:14.743Z",
               "EditorCaption": ""
             }
           ]

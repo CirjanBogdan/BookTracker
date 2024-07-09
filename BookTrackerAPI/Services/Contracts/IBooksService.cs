@@ -5,10 +5,10 @@ namespace BookTrackerAPI.Services.Contracts
 {
     public interface IBooksService
     {
-        Task<List<Book>> GetAllBooks();
-        Task<Book> AddBook(Book book);
-        Task<Book?> GetBookById(int id);
-        Task<Book?> UpdateBook(int id, BookDTO bookModel);
-        Task<Book?> DeleteBook(int id);
+        Task<List<BookWithAuthorsDTO>> GetAll();
+        Task<BookDTO> AddBookWithAuthor(BookDTO bookModel);
+        Task<BookWithAuthorsDTO?> GetById(int id);
+        Task<BookDTO?> Update(int id, BookDTO bookModel);
+        Task<BookDTO?> Delete(int id);
     }
 }
