@@ -3,4 +3,4 @@
 
 - 𝗘𝗻𝘁𝗶𝘁𝘆 𝗙𝗿𝗮𝗺𝗲𝘄𝗼𝗿𝗸 with a code-first approach, supporting all three types of relationships: one-to-one, one-to-many, and many-to-many.
 - Logging implemented with 𝗦𝗲𝗿𝗶𝗹𝗼𝗴.
-![BookTrackerAPI](https://github.com/CirjanBogdan/BookTracker/assets/124176929/8255ecb5-f48b-4034-83cd-3b4bf972f22f)
+![BookTrackerAPI](https://github.com/CirjanBogdan/BookTracker/assets/124176929/bd0bf579-a140-4f03-83fa-e00c48a31a4d)
